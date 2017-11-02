@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnIniciarSesion;
     Button btnCrearCuenta;
     TextView lblOlvideContrasena;
+    TextView contrasena;
+    TextView matricula;
+    String matriculabd="1217234";
+    String contrasenabd="elpepe";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +27,22 @@ public class MainActivity extends AppCompatActivity {
         btnIniciarSesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                contrasena = (TextView) findViewById(R.id.contrasena);
+                matricula = (TextView)findViewById(R.id.matricula);
+                if(contrasena.getText().toString().equals(contrasenabd)&&matricula.getText().toString().equals(matriculabd))
+                {
+                   // matricula=null;
+                  //  contrasena=null;
+                    //llevar a la ventana principal del usuario
+                }
+                if(matricula.getText().toString().isEmpty())
+                {
+                    //llamar una ventana que diga que la matricula esta vacia
+                }
+                if(contrasena.getText().toString().isEmpty())
+                {
+                    //lamar una ventana que diga que la contraseña está vacia
+                }
             }
         });
 
@@ -31,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         btnCrearCuenta.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent crearCuenta = new Intent(MainActivity.this,CrearCuenta.class);
-                startActivity(crearCuenta);
-            }
+                    Intent crearCuenta = new Intent(MainActivity.this,CrearCuenta.class);
+                    startActivity(crearCuenta);
+                }
         });
 
         lblOlvideContrasena = (TextView) findViewById(R.id.lblOlvideContrasena);
